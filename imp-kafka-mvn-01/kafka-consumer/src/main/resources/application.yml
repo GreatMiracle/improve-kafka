@@ -1,0 +1,16 @@
+
+server:
+  port: 8092
+
+spring:
+  application:
+    name: "kafka-consumer"
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: my-consumer-group
+      auto-offset-reset: earliest
+
+  jackson:
+    date-format: yyyy-MMM-dd

@@ -1,0 +1,28 @@
+package com.learn.kafka.kafkaconsumer.scheduler;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.config.KafkaListenerEndpointRegistry;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+@Component
+@Slf4j
+public class GeneralLedgerScheduler {
+
+    @Autowired
+    private KafkaListenerEndpointRegistry registry;
+
+    @Scheduled(cron = "0 7 7 * * ?")
+    public void stop() {
+        log.info("Stopping consumer");
+        registry.getListenerContainer("general-ledger.one").pause();
+    }
+
+    @Scheduled(cron = "1 9 7 * * ?")
+    public void start() {
+        log.info("Starting consumer");
+        registry.getListenerContainer("general-ledger.one").resume();
+    }
+
+}
