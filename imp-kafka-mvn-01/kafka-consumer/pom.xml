@@ -44,7 +44,7 @@
 
 		<dependency>
 			<groupId>com.learn.kafka</groupId>
-			<artifactId>kafka-core</artifactId>
+			<artifactId>kafka-basic-core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>

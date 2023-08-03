@@ -4,4 +4,4 @@ server:
 
 spring:
   application:
-    name: "kafka-core"
+    name: "kafka-basic-core"
